@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/core/Hero.astro';
+import CTAButton from '../components/core/CTAButton.astro';
+---
+
+<Layout 
+  title="Sobre Mí | Nutricionista Profesional"
+  description="Conoce más sobre mi formación, experiencia y enfoque como nutricionista profesional. Descubre cómo puedo ayudarte a alcanzar tus objetivos de salud."
+>
+  <Hero 
+    title="Sobre Mí"
+    subtitle="Nutricionista certificada con experiencia en nutrición clínica, deportiva y asesoramiento nutricional personalizado."
+    image="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">Mi Historia</h2>
+          <p class="text-gray-700 mb-4">
+            Mi pasión por la nutrición comenzó hace más de 10 años cuando descubrí el impacto transformador que una alimentación adecuada puede tener en nuestra salud y bienestar general.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Tras completar mi licenciatura en Nutrición y Dietética, me especialicé en nutrición clínica y deportiva, adquiriendo amplia experiencia en el tratamiento de diversas condiciones de salud y en la optimización del rendimiento deportivo.
+          </p>
+          <p class="text-gray-700">
+            Mi enfoque se centra en crear planes nutricionales personalizados que se adapten a las necesidades, preferencias y estilo de vida únicos de cada persona, utilizando la evidencia científica más actualizada como base de mis recomendaciones.
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-xl">
+          <img 
+            src="https://images.pexels.com/photos/3992206/pexels-photo-3992206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            alt="Nutricionista profesional" 
+            class="w-full h-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Mi Enfoque</h2>
+        <p class="text-gray-700 max-w-3xl mx-auto">
+          Creo firmemente en un enfoque integral de la nutrición que va más allá de contar calorías o seguir dietas restrictivas.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="text-primary mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Personalización</h3>
+          <p class="text-gray-700">
+            Cada persona es única, por lo que desarrollo planes nutricionales adaptados específicamente a tus necesidades, objetivos y preferencias alimentarias.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="text-primary mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Basado en Evidencia</h3>
+          <p class="text-gray-700">
+            Todas mis recomendaciones están fundamentadas en la investigación científica más actualizada, garantizando resultados efectivos y sostenibles.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="text-primary mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Educación Nutricional</h3>
+          <p class="text-gray-700">
+            Mi objetivo es empoderarte con el conocimiento necesario para tomar decisiones informadas sobre tu alimentación a largo plazo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Formación y Credenciales</h2>
+        <p class="text-gray-700 max-w-3xl mx-auto">
+          Mi compromiso con la excelencia profesional se refleja en mi formación continua y especialización.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-xl font-bold mb-2">Formación Académica</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Licenciatura en Nutrición y Dietética</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Máster en Nutrición Clínica</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Especialización en Nutrición Deportiva</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-xl font-bold mb-2">Certificaciones</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Certificada en Nutrición Clínica Avanzada</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Especialista en Manejo Nutricional de Enfermedades Crónicas</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Certificada en Coaching Nutricional</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-xl font-bold mb-2">Membresías Profesionales</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Asociación de Dietistas y Nutricionistas</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Sociedad Internacional de Nutrición Deportiva</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Colegio Oficial de Dietistas-Nutricionistas</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-primary">
+    <div class="container mx-auto">
+      <div class="text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">¿Listo para comenzar tu camino hacia una mejor salud?</h2>
+        <p class="max-w-2xl mx-auto mb-8">
+          Estoy aquí para guiarte en cada paso del camino. Agenda tu consulta hoy mismo y comencemos juntos.
+        </p>
+        <CTAButton 
+          href="/appointment" 
+          text="Reservar Consulta" 
+          variant="secondary" 
+          size="lg"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,328 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/core/Hero.astro';
+import BlogCard from '../../components/core/BlogCard.astro';
+
+// In a real project, this would come from a content collection or API
+const posts = [
+  {
+    title: "10 Alimentos que Potencian tu Sistema Inmunológico",
+    description: "Descubre qué alimentos pueden ayudarte a fortalecer tus defensas naturalmente y mantener tu sistema inmunológico en óptimas condiciones.",
+    image: "https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600",
+    date: "2023-05-15",
+    url: "/blog/alimentos-sistema-inmunologico",
+    category: "Nutrición Preventiva"
+  },
+  {
+    title: "Guía Completa de Proteínas Vegetales",
+    description: "Todo lo que necesitas saber sobre las mejores fuentes de proteínas vegetales y cómo incorporarlas a tu dieta diaria de forma balanceada.",
+    image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600",
+    date: "2023-06-22",
+    url: "/blog/guia-proteinas-vegetales",
+    category: "Alimentación Vegetal"
+  },
+  {
+    title: "Nutrición y Rendimiento Deportivo",
+    description: "Estrategias nutricionales para optimizar tu rendimiento deportivo, mejorar la recuperación y alcanzar tus objetivos físicos.",
+    image: "https://images.pexels.com/photos/703016/pexels-photo-703016.jpeg?auto=compress&cs=tinysrgb&w=600",
+    date: "2023-07-10",
+    url: "/blog/nutricion-rendimiento-deportivo",
+    category: "Nutrición Deportiva"
+  },
+  {
+    title: "Los Mejores Snacks Saludables para el Trabajo",
+    description: "Opciones prácticas y nutritivas para mantener la energía durante la jornada laboral sin comprometer tu salud.",
+    image: "https://images.pexels.com/photos/5945559/pexels-photo-5945559.jpeg?auto=compress&cs=tinysrgb&w=600",
+    date: "2023-07-28",
+    url: "/blog/snacks-saludables-trabajo",
+    category: "Alimentación Práctica"
+  },
+  {
+    title: "Mitos y Realidades sobre la Nutrición",
+    description: "Analizamos los mitos más comunes sobre la alimentación y presentamos la evidencia científica que los desmiente.",
+    image: "https://images.pexels.com/photos/4033596/pexels-photo-4033596.jpeg?auto=compress&cs=tinysrgb&w=600",
+    date: "2023-08-15",
+    url: "/blog/mitos-realidades-nutricion",
+    category: "Educación Nutricional"
+  },
+  {
+    title: "Nutrición para la Salud Mental",
+    description: "Cómo tu alimentación influye en tu bienestar emocional y mental, y qué nutrientes son clave para mantener un cerebro saludable.",
+    image: "https://images.pexels.com/photos/5340280/pexels-photo-5340280.jpeg?auto=compress&cs=tinysrgb&w=600",
+    date: "2023-09-05",
+    url: "/blog/nutricion-salud-mental",
+    category: "Nutrición y Bienestar"
+  }
+];
+
+// Categories for filtering
+const categories = [...new Set(posts.map(post => post.category))];
+
+// Sort posts by date (newest first)
+const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<Layout 
+  title="Blog de Nutrición | Artículos y Consejos sobre Alimentación Saludable"
+  description="Encuentra artículos, consejos y recetas sobre nutrición, alimentación saludable y bienestar. Información basada en evidencia científica."
+>
+  <Hero 
+    title="Blog de Nutrición"
+    subtitle="Artículos, consejos y recursos sobre nutrición, alimentación saludable y bienestar basados en evidencia científica."
+    image="https://images.pexels.com/photos/4506108/pexels-photo-4506108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Sidebar with filters -->
+        <div class="w-full md:w-1/4">
+          <div class="bg-white p-6 rounded-lg shadow-md sticky top-24">
+            <h2 class="text-xl font-bold mb-4">Filtrar por</h2>
+            
+            <div class="mb-6">
+              <h3 class="font-bold mb-2">Categorías</h3>
+              <div class="space-y-2" id="category-filters">
+                <div class="flex items-center">
+                  <input 
+                    type="checkbox" 
+                    id="all-categories" 
+                    class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    checked
+                  />
+                  <label for="all-categories" class="ml-2 text-gray-700">Todas las categorías</label>
+                </div>
+                
+                {categories.map((category, index) => (
+                  <div class="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      id={`category-${index}`} 
+                      value={category}
+                      class="category-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    />
+                    <label for={`category-${index}`} class="ml-2 text-gray-700">{category}</label>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="font-bold mb-2">Buscar</h3>
+              <div class="relative">
+                <input 
+                  type="text" 
+                  id="search-input"
+                  placeholder="Buscar artículos..." 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary pr-10"
+                />
+                <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Blog posts grid -->
+        <div class="w-full md:w-3/4">
+          <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-2">Artículos Recientes</h2>
+            <p class="text-gray-700">Explora nuestros últimos artículos sobre nutrición y bienestar.</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="posts-container">
+            {sortedPosts.map(post => (
+              <BlogCard 
+                title={post.title}
+                description={post.description}
+                image={post.image}
+                date={post.date}
+                url={post.url}
+                category={post.category}
+              />
+            ))}
+          </div>
+          
+          <div class="mt-12 text-center" id="no-results" style="display: none;">
+            <p class="text-lg text-gray-700">No se encontraron artículos que coincidan con tu búsqueda.</p>
+            <button id="reset-filters" class="mt-4 text-primary hover:text-primary-dark font-medium">
+              Resetear filtros
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const posts = [
+      {
+        title: "10 Alimentos que Potencian tu Sistema Inmunológico",
+        description: "Descubre qué alimentos pueden ayudarte a fortalecer tus defensas naturalmente y mantener tu sistema inmunológico en óptimas condiciones.",
+        image: "https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600",
+        date: "2023-05-15",
+        url: "/blog/alimentos-sistema-inmunologico",
+        category: "Nutrición Preventiva"
+      },
+      {
+        title: "Guía Completa de Proteínas Vegetales",
+        description: "Todo lo que necesitas saber sobre las mejores fuentes de proteínas vegetales y cómo incorporarlas a tu dieta diaria de forma balanceada.",
+        image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600",
+        date: "2023-06-22",
+        url: "/blog/guia-proteinas-vegetales",
+        category: "Alimentación Vegetal"
+      },
+      {
+        title: "Nutrición y Rendimiento Deportivo",
+        description: "Estrategias nutricionales para optimizar tu rendimiento deportivo, mejorar la recuperación y alcanzar tus objetivos físicos.",
+        image: "https://images.pexels.com/photos/703016/pexels-photo-703016.jpeg?auto=compress&cs=tinysrgb&w=600",
+        date: "2023-07-10",
+        url: "/blog/nutricion-rendimiento-deportivo",
+        category: "Nutrición Deportiva"
+      },
+      {
+        title: "Los Mejores Snacks Saludables para el Trabajo",
+        description: "Opciones prácticas y nutritivas para mantener la energía durante la jornada laboral sin comprometer tu salud.",
+        image: "https://images.pexels.com/photos/5945559/pexels-photo-5945559.jpeg?auto=compress&cs=tinysrgb&w=600",
+        date: "2023-07-28",
+        url: "/blog/snacks-saludables-trabajo",
+        category: "Alimentación Práctica"
+      },
+      {
+        title: "Mitos y Realidades sobre la Nutrición",
+        description: "Analizamos los mitos más comunes sobre la alimentación y presentamos la evidencia científica que los desmiente.",
+        image: "https://images.pexels.com/photos/4033596/pexels-photo-4033596.jpeg?auto=compress&cs=tinysrgb&w=600",
+        date: "2023-08-15",
+        url: "/blog/mitos-realidades-nutricion",
+        category: "Educación Nutricional"
+      },
+      {
+        title: "Nutrición para la Salud Mental",
+        description: "Cómo tu alimentación influye en tu bienestar emocional y mental, y qué nutrientes son clave para mantener un cerebro saludable.",
+        image: "https://images.pexels.com/photos/5340280/pexels-photo-5340280.jpeg?auto=compress&cs=tinysrgb&w=600",
+        date: "2023-09-05",
+        url: "/blog/nutricion-salud-mental",
+        category: "Nutrición y Bienestar"
+      }
+    ];
+    
+    const postsContainer = document.getElementById('posts-container');
+    const noResults = document.getElementById('no-results');
+    const searchInput = document.getElementById('search-input');
+    const allCategoriesCheckbox = document.getElementById('all-categories');
+    const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
+    const resetFiltersButton = document.getElementById('reset-filters');
+    
+    // Filter posts based on search query and selected categories
+    function filterPosts() {
+      const searchQuery = searchInput.value.toLowerCase();
+      const selectedCategories = [];
+      
+      categoryCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          selectedCategories.push(checkbox.value);
+        }
+      });
+      
+      const allCategoriesSelected = allCategoriesCheckbox.checked || selectedCategories.length === 0;
+      
+      // Filter posts
+      const filteredPosts = posts.filter(post => {
+        const matchesSearch = post.title.toLowerCase().includes(searchQuery) || 
+                              post.description.toLowerCase().includes(searchQuery);
+                              
+        const matchesCategory = allCategoriesSelected || selectedCategories.includes(post.category);
+        
+        return matchesSearch && matchesCategory;
+      });
+      
+      // Update UI
+      postsContainer.innerHTML = '';
+      
+      if (filteredPosts.length === 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+        
+        filteredPosts.forEach(post => {
+          // Create post card HTML
+          const postCard = document.createElement('article');
+          postCard.className = 'bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow';
+          
+          const formattedDate = new Date(post.date).toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          });
+          
+          postCard.innerHTML = `
+            <a href="${post.url}" class="block">
+              <img 
+                src="${post.image}" 
+                alt="${post.title}" 
+                class="w-full h-48 object-cover"
+              />
+            </a>
+            <div class="p-6">
+              ${post.category ? `
+                <span class="inline-block px-3 py-1 text-xs font-medium bg-primary-light/20 text-primary-dark rounded-full mb-3">
+                  ${post.category}
+                </span>
+              ` : ''}
+              <a href="${post.url}" class="block">
+                <h3 class="text-xl font-bold mb-2 hover:text-primary transition-colors">${post.title}</h3>
+              </a>
+              <p class="text-gray-600 text-sm mb-4">${formattedDate}</p>
+              <p class="text-gray-700 mb-4 line-clamp-3">${post.description}</p>
+              <a href="${post.url}" class="text-primary font-medium hover:text-primary-dark transition-colors inline-flex items-center">
+                Leer más
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          `;
+          
+          postsContainer.appendChild(postCard);
+        });
+      }
+    }
+    
+    // Event listeners
+    searchInput.addEventListener('input', filterPosts);
+    
+    allCategoriesCheckbox.addEventListener('change', function() {
+      if (this.checked) {
+        categoryCheckboxes.forEach(checkbox => {
+          checkbox.checked = false;
+        });
+      }
+      filterPosts();
+    });
+    
+    categoryCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          allCategoriesCheckbox.checked = false;
+        } else if ([...categoryCheckboxes].every(cb => !cb.checked)) {
+          allCategoriesCheckbox.checked = true;
+        }
+        filterPosts();
+      });
+    });
+    
+    resetFiltersButton.addEventListener('click', function() {
+      searchInput.value = '';
+      allCategoriesCheckbox.checked = true;
+      categoryCheckboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      filterPosts();
+    });
+  });
+</script>

@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/core/Hero.astro';
+import ServiceCard from '../components/core/ServiceCard.astro';
+import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
+import BlogCard from '../components/core/BlogCard.astro';
+import CTAButton from '../components/core/CTAButton.astro';
+
+const testimonials = [
+  {
+    quote: "El plan nutricional personalizado que recibí cambió completamente mi relación con la comida. Ahora tengo más energía y me siento mejor que nunca.",
+    author: "María García",
+    role: "Cliente desde 2022",
+    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300"
+  },
+  {
+    quote: "Después de años luchando con problemas digestivos, finalmente encontré soluciones reales gracias a las consultas nutricionales. Increíble profesionalismo.",
+    author: "Carlos Rodríguez",
+    role: "Cliente desde 2021",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300"
+  },
+  {
+    quote: "Los talleres grupales me han dado herramientas prácticas para mejorar mis hábitos alimenticios. Recomiendo 100% estos servicios.",
+    author: "Ana Martínez",
+    role: "Cliente desde 2023",
+    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300"
+  }
+];
+
+const featuredPosts = [
+  {
+    title: "10 Alimentos que Potencian tu Sistema Inmunológico",
+    description: "Descubre qué alimentos pueden ayudarte a fortalecer tus defensas naturalmente y mantener tu sistema inmunológico en óptimas condiciones.",
+    image: "https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600",
+    date: "2023-05-15",
+    url: "/blog/alimentos-sistema-inmunologico",
+    category: "Nutrición Preventiva"
+  },
+  {
+    title: "Guía Completa de Proteínas Vegetales",
+    description: "Todo lo que necesitas saber sobre las mejores fuentes de proteínas vegetales y cómo incorporarlas a tu dieta diaria de forma balanceada.",
+    image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600",
+    date: "2023-06-22",
+    url: "/blog/guia-proteinas-vegetales",
+    category: "Alimentación Vegetal"
+  },
+  {
+    title: "Nutrición y Rendimiento Deportivo",
+    description: "Estrategias nutricionales para optimizar tu rendimiento deportivo, mejorar la recuperación y alcanzar tus objetivos físicos.",
+    image: "https://images.pexels.com/photos/703016/pexels-photo-703016.jpeg?auto=compress&cs=tinysrgb&w=600",
+    date: "2023-07-10",
+    url: "/blog/nutricion-rendimiento-deportivo",
+    category: "Nutrición Deportiva"
+  }
+];
+---
+
+<Layout>
+  <Hero 
+    title="Reserva tu cita con un nutricionista"
+    subtitle="Transforma tu salud con asesoramiento nutricional personalizado. Planes alimenticios adaptados a tus necesidades y objetivos específicos."
+    ctaText="Reservar Cita"
+    secondaryCtaText="Conoce más"
+    secondaryCtaLink="#servicios"
+  />
+  
+  <section id="servicios" class="py-16 bg-gray-50">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Servicios de Nutrición</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+          Soluciones nutricionales personalizadas que se adaptan a tu estilo de vida, necesidades y objetivos de salud.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard 
+          title="Consulta Nutricional" 
+          description="Evaluación completa de tu estado nutricional y creación de un plan personalizado según tus necesidades específicas."
+          price="$80"
+          features={[
+            "Evaluación nutricional completa",
+            "Análisis de composición corporal",
+            "Plan alimenticio personalizado",
+            "Seguimiento mensual"
+          ]}
+        />
+        
+        <ServiceCard 
+          title="Plan Alimenticio Deportivo" 
+          description="Optimiza tu rendimiento deportivo con un plan nutricional diseñado específicamente para tus entrenamientos y objetivos."
+          price="$95"
+          features={[
+            "Evaluación de necesidades deportivas",
+            "Plan de nutrición deportiva personalizado",
+            "Estrategias pre y post entrenamiento",
+            "Seguimiento quincenal"
+          ]}
+        />
+        
+        <ServiceCard 
+          title="Nutrición Terapéutica" 
+          description="Manejo nutricional especializado para condiciones médicas específicas, en coordinación con tu equipo médico."
+          price="$110"
+          features={[
+            "Evaluación clínica nutricional",
+            "Plan adaptado a tu condición médica",
+            "Coordinación con otros especialistas",
+            "Seguimiento semanal"
+          ]}
+        />
+      </div>
+      
+      <div class="text-center mt-12">
+        <CTAButton href="/services" text="Ver todos los servicios" variant="secondary" />
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Testimonios</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+          Descubre cómo nuestros servicios han transformado la vida de nuestros clientes.
+        </p>
+      </div>
+      
+      <TestimonialCarousel testimonials={testimonials} />
+    </div>
+  </section>
+  
+  <section class="py-16 bg-primary-light/10">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Blog de Nutrición</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+          Artículos, consejos y recetas para ayudarte a mantener un estilo de vida saludable.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredPosts.map(post => (
+          <BlogCard 
+            title={post.title}
+            description={post.description}
+            image={post.image}
+            date={post.date}
+            url={post.url}
+            category={post.category}
+          />
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <CTAButton href="/blog" text="Ver más artículos" variant="secondary" />
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-primary">
+    <div class="container mx-auto">
+      <div class="text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para transformar tu salud?</h2>
+        <p class="max-w-2xl mx-auto mb-8">
+          Da el primer paso hacia una vida más saludable y equilibrada. Agenda tu consulta hoy mismo.
+        </p>
+        <CTAButton 
+          href="/appointment" 
+          text="Reservar Cita Ahora" 
+          variant="secondary" 
+          size="lg"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

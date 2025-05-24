@@ -1,0 +1,61 @@
+---
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/700.css';
+import '@fontsource/playfair-display/700.css';
+import { SEO } from 'astro-seo';
+import Navbar from '../components/core/Navbar.astro';
+import Footer from '../components/core/Footer.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = 'Nutrición Experta | Servicios de Nutrición Personalizados', 
+  description = 'Servicios profesionales de nutrición personalizados para mejorar tu salud y bienestar. Consultas, planes alimenticios y asesoramiento nutricional.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={title}
+      description={description}
+      openGraph={{
+        basic: {
+          title: title,
+          type: 'website',
+          image: '/og-image.jpg',
+        }
+      }}
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-white text-text">
+    <Navbar />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.display');
+    line-height: 1.2;
+  }
+  p, li, a {
+    line-height: 1.5;
+  }
+</style>

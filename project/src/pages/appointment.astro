@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/core/Hero.astro';
+---
+
+<Layout 
+  title="Reserva tu Cita | Nutricionista Profesional"
+  description="Agenda una consulta con nuestro equipo de nutricionistas. Ofrecemos consultas presenciales y online para adaptarnos a tus necesidades."
+>
+  <Hero 
+    title="Reserva tu Cita"
+    subtitle="Agenda una consulta con nuestro equipo de nutricionistas profesionales. Ofrecemos consultas presenciales y online para adaptarnos a tus necesidades."
+    image="https://images.pexels.com/photos/4046567/pexels-photo-4046567.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Agenda tu Consulta</h2>
+          <p class="text-gray-700">
+            Selecciona el tipo de consulta que prefieres y encuentra el horario que mejor se adapte a tu agenda.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+          <div class="mb-8">
+            <h3 class="text-xl font-bold mb-4">Selecciona el tipo de consulta</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary transition-colors" id="consulta-presencial">
+                <div class="flex items-center">
+                  <input type="radio" id="presencial" name="tipo-consulta" class="h-4 w-4 text-primary focus:ring-primary border-gray-300" checked>
+                  <label for="presencial" class="ml-2 block text-lg font-medium">
+                    Consulta Presencial
+                  </label>
+                </div>
+                <p class="text-gray-600 mt-2 pl-6">
+                  Consulta cara a cara en nuestra clínica con evaluación física completa.
+                </p>
+              </div>
+              <div class="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary transition-colors" id="consulta-online">
+                <div class="flex items-center">
+                  <input type="radio" id="online" name="tipo-consulta" class="h-4 w-4 text-primary focus:ring-primary border-gray-300">
+                  <label for="online" class="ml-2 block text-lg font-medium">
+                    Consulta Online
+                  </label>
+                </div>
+                <p class="text-gray-600 mt-2 pl-6">
+                  Consulta por videoconferencia desde la comodidad de tu hogar.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-8">
+            <h3 class="text-xl font-bold mb-4">Selecciona el servicio</h3>
+            <select
+              id="servicio"
+              name="servicio"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary"
+            >
+              <option value="">Selecciona un servicio</option>
+              <option value="primera-consulta">Primera Consulta Nutricional</option>
+              <option value="seguimiento">Consulta de Seguimiento</option>
+              <option value="deportiva">Nutrición Deportiva</option>
+              <option value="terapeutica">Nutrición Terapéutica</option>
+              <option value="planes">Plan Alimenticio Personalizado</option>
+            </select>
+          </div>
+          
+          <!-- Calendly inline widget -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com" style="min-width:320px;height:700px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Preguntas Frecuentes</h2>
+          <p class="text-gray-700">
+            Resolvemos tus dudas sobre el proceso de consulta y reserva.
+          </p>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-lg font-bold mb-2">¿Qué debo llevar a mi primera consulta?</h3>
+            <p class="text-gray-700">
+              Para tu primera consulta, es recomendable traer cualquier análisis médico reciente, un registro de tu alimentación de los últimos 3 días y una lista de suplementos o medicamentos que estés tomando actualmente.
+            </p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-lg font-bold mb-2">¿Cuánto dura una consulta?</h3>
+            <p class="text-gray-700">
+              La primera consulta tiene una duración aproximada de 60 minutos, mientras que las consultas de seguimiento suelen durar entre 30 y 45 minutos, dependiendo de tus necesidades específicas.
+            </p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-lg font-bold mb-2">¿Puedo cancelar o reprogramar mi cita?</h3>
+            <p class="text-gray-700">
+              Sí, puedes cancelar o reprogramar tu cita con al menos 24 horas de antelación sin ningún cargo adicional. Para cancelaciones con menos de 24 horas de anticipación, se aplicará un cargo del 50% del valor de la consulta.
+            </p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-lg font-bold mb-2">¿Cómo funciona la consulta online?</h3>
+            <p class="text-gray-700">
+              Las consultas online se realizan a través de videoconferencia (Zoom, Google Meet o similar). Recibirás un enlace por email antes de tu cita. Necesitarás una conexión a internet estable y un dispositivo con cámara y micrófono.
+            </p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-lg font-bold mb-2">¿Aceptan seguros médicos?</h3>
+            <p class="text-gray-700">
+              Trabajamos con algunas compañías de seguros médicos. Te recomendamos consultar con tu aseguradora si cubren nuestros servicios o contactarnos directamente para verificar si trabajamos con tu seguro específico.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Calendly integration
+  (function() {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+  
+  // Toggle between consultation types
+  document.addEventListener('DOMContentLoaded', function() {
+    const presencialOption = document.getElementById('consulta-presencial');
+    const onlineOption = document.getElementById('consulta-online');
+    const presencialRadio = document.getElementById('presencial');
+    const onlineRadio = document.getElementById('online');
+    
+    if (presencialOption && onlineOption) {
+      presencialOption.addEventListener('click', function() {
+        presencialRadio.checked = true;
+        presencialOption.classList.add('border-primary');
+        onlineOption.classList.remove('border-primary');
+        // Here you would update the Calendly URL based on the selection
+      });
+      
+      onlineOption.addEventListener('click', function() {
+        onlineRadio.checked = true;
+        onlineOption.classList.add('border-primary');
+        presencialOption.classList.remove('border-primary');
+        // Here you would update the Calendly URL based on the selection
+      });
+    }
+    
+    // Service selection would update Calendly URL
+    const serviceSelect = document.getElementById('servicio');
+    if (serviceSelect) {
+      serviceSelect.addEventListener('change', function() {
+        // Here you would update the Calendly URL based on the service selection
+      });
+    }
+  });
+</script>
