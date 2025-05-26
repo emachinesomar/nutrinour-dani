@@ -213,23 +213,23 @@ const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new D
     
     const postsContainer = document.getElementById('posts-container');
     const noResults = document.getElementById('no-results');
-    const searchInput = document.getElementById('search-input');
-    const allCategoriesCheckbox = document.getElementById('all-categories');
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    const allCategoriesCheckbox = document.getElementById('all-categories') as HTMLInputElement;
     const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
     const resetFiltersButton = document.getElementById('reset-filters');
     
     // Filter posts based on search query and selected categories
     function filterPosts() {
-      const searchQuery = searchInput.value.toLowerCase();
-      const selectedCategories = [];
+      const searchQuery = searchInput?.value.toLowerCase() ?? '';
+      const selectedCategories: string[] = [];
       
       categoryCheckboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          selectedCategories.push(checkbox.value);
-        }
-      });
+          if ((checkbox as HTMLInputElement).checked) {
+            selectedCategories.push((checkbox as HTMLInputElement).value);
+          }
+        });
       
-      const allCategoriesSelected = allCategoriesCheckbox.checked || selectedCategories.length === 0;
+      const allCategoriesSelected = allCategoriesCheckbox?.checked || selectedCategories.length === 0;
       
       // Filter posts
       const filteredPosts = posts.filter(post => {
@@ -242,12 +242,14 @@ const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new D
       });
       
       // Update UI
-      postsContainer.innerHTML = '';
+      if (postsContainer) {
+        postsContainer.innerHTML = '';
+      }
       
       if (filteredPosts.length === 0) {
-        noResults.style.display = 'block';
+        if (noResults) noResults.style.display = 'block';
       } else {
-        noResults.style.display = 'none';
+        if (noResults) noResults.style.display = 'none';
         
         filteredPosts.forEach(post => {
           // Create post card HTML
@@ -288,7 +290,9 @@ const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new D
             </div>
           `;
           
-          postsContainer.appendChild(postCard);
+          if (postsContainer) {
+            postsContainer.appendChild(postCard);
+          }
         });
       }
     }
@@ -299,30 +303,32 @@ const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new D
     allCategoriesCheckbox.addEventListener('change', function() {
       if (this.checked) {
         categoryCheckboxes.forEach(checkbox => {
-          checkbox.checked = false;
+          (checkbox as HTMLInputElement).checked = false;
         });
       }
       filterPosts();
     });
     
     categoryCheckboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', function() {
+      checkbox.addEventListener('change', function(this: HTMLInputElement) {
         if (this.checked) {
           allCategoriesCheckbox.checked = false;
-        } else if ([...categoryCheckboxes].every(cb => !cb.checked)) {
+        } else if ([...categoryCheckboxes].every(cb => !(cb as HTMLInputElement).checked)) {
           allCategoriesCheckbox.checked = true;
         }
         filterPosts();
       });
     });
     
-    resetFiltersButton.addEventListener('click', function() {
-      searchInput.value = '';
-      allCategoriesCheckbox.checked = true;
-      categoryCheckboxes.forEach(checkbox => {
-        checkbox.checked = false;
+    if (resetFiltersButton) {
+      resetFiltersButton.addEventListener('click', function() {
+        searchInput.value = '';
+        allCategoriesCheckbox.checked = true;
+        categoryCheckboxes.forEach(checkbox => {
+          (checkbox as HTMLInputElement).checked = false;
+        });
+        filterPosts();
       });
-      filterPosts();
-    });
+    }
   });
 </script>

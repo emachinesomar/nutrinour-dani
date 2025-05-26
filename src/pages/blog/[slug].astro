@@ -1,0 +1,752 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+// In a real project, we would get this from a content collection or API
+const posts = {
+	'alimentos-sistema-inmunologico': {
+		title: '10 Alimentos que Potencian tu Sistema Inmunológico',
+		description:
+			'Descubre qué alimentos pueden ayudarte a fortalecer tus defensas naturalmente y mantener tu sistema inmunológico en óptimas condiciones.',
+		image:
+			'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+		date: '2023-05-15',
+		author: 'Dra. María López',
+		content: `
+      <p class="mb-4">Un sistema inmunológico fuerte es fundamental para mantener una buena salud y prevenir enfermedades. Aunque no existe un alimento mágico que evite enfermarnos, una dieta equilibrada rica en ciertos nutrientes puede ayudar a fortalecer nuestras defensas naturales.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">¿Por qué la alimentación afecta a nuestro sistema inmune?</h2>
+      
+      <p class="mb-4">Nuestro sistema inmunológico depende de un suministro constante de nutrientes para funcionar de manera óptima. Sin los bloques de construcción adecuados, nuestras células inmunitarias no pueden multiplicarse, activarse o producir los anticuerpos y compuestos que necesitan para combatir infecciones.</p>
+      
+      <p class="mb-6">Los siguientes alimentos son particularmente beneficiosos para fortalecer el sistema inmunológico gracias a su contenido en nutrientes clave como vitamina C, vitamina D, zinc, selenio, hierro y antioxidantes.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">10 Alimentos para potenciar tus defensas</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">1. Cítricos</h3>
+      <p class="mb-4">Las naranjas, limones, mandarinas y pomelos son ricos en vitamina C, un potente antioxidante que estimula la producción de glóbulos blancos, fundamentales para combatir infecciones.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">2. Pimientos rojos</h3>
+      <p class="mb-4">Contienen el doble de vitamina C que los cítricos y son ricos en beta-caroteno, que se convierte en vitamina A en nuestro organismo, fortaleciendo la piel y las mucosas, nuestra primera línea de defensa.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">3. Brócoli</h3>
+      <p class="mb-4">Superalimento rico en vitaminas A, C y E, así como en fibra y antioxidantes. Para aprovechar al máximo sus propiedades, es mejor cocinarlo al vapor o consumirlo crudo.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">4. Ajo</h3>
+      <p class="mb-4">Sus propiedades antimicrobianas y antivirales se deben a la alicina, un compuesto que se activa al triturar o picar el ajo. Ha sido utilizado desde la antigüedad para combatir infecciones.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">5. Jengibre</h3>
+      <p class="mb-4">Tiene propiedades antiinflamatorias y puede ayudar a reducir el dolor de garganta y otras inflamaciones. También puede contribuir a disminuir las náuseas.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">6. Espinacas</h3>
+      <p class="mb-4">Ricas en vitamina C, antioxidantes y beta-caroteno, que aumentan la capacidad de nuestro sistema inmunológico para combatir infecciones.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">7. Yogur natural</h3>
+      <p class="mb-4">Los yogures con cultivos vivos pueden estimular el sistema inmunológico. Busca aquellos con "cultivos vivos y activos" o que contengan probióticos.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">8. Frutos secos y semillas</h3>
+      <p class="mb-4">Las almendras, nueces y semillas de girasol son ricas en vitamina E, un antioxidante clave para la función inmunitaria.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">9. Cúrcuma</h3>
+      <p class="mb-4">El componente activo de la cúrcuma, la curcumina, tiene potentes propiedades antiinflamatorias y puede ayudar a modular la respuesta inmunitaria.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">10. Té verde</h3>
+      <p class="mb-4">Rico en flavonoides, un tipo de antioxidante. También contiene epigalocatequina galato (EGCG), otro potente antioxidante que ha demostrado mejorar la función inmunitaria.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Consejos para incorporar estos alimentos a tu dieta</h2>
+      
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li>Añade cítricos o pimientos a tus ensaladas.</li>
+        <li>Prepara smoothies con espinacas, jengibre y frutas.</li>
+        <li>Incorpora el ajo y la cúrcuma a tus platos principales.</li>
+        <li>Consume un yogur natural como merienda o postre.</li>
+        <li>Lleva frutos secos y semillas como snack saludable.</li>
+        <li>Sustituye el café por té verde en algunas ocasiones.</li>
+      </ul>
+      
+      <p class="mb-4">Recuerda que ningún alimento por sí solo puede prevenir enfermedades. Un sistema inmunológico fuerte requiere una dieta equilibrada y variada, junto con otros hábitos saludables como el ejercicio regular, dormir bien, controlar el estrés y mantener una buena higiene.</p>
+      
+      <div class="bg-primary-light/10 p-6 rounded-lg mt-8 mb-6">
+        <h3 class="text-xl font-bold mb-3">Nota importante</h3>
+        <p>Si bien estos alimentos pueden ayudar a fortalecer tu sistema inmunitario, no son un sustituto de las medidas preventivas recomendadas por las autoridades sanitarias, como la vacunación, el lavado de manos frecuente y otras precauciones específicas según la situación.</p>
+      </div>
+    `,
+	},
+	'guia-proteinas-vegetales': {
+		title: 'Guía Completa de Proteínas Vegetales',
+		description:
+			'Todo lo que necesitas saber sobre las mejores fuentes de proteínas vegetales y cómo incorporarlas a tu dieta diaria de forma balanceada.',
+		image:
+			'https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+		date: '2023-06-22',
+		author: 'Dr. Carlos Rodríguez',
+		content: `
+      <p class="mb-4">Las proteínas son macronutrientes esenciales para nuestro organismo, responsables de construir y reparar tejidos, producir enzimas y hormonas, y apoyar el sistema inmunológico. Aunque tradicionalmente se asocian con productos de origen animal, existen numerosas fuentes vegetales ricas en proteínas que pueden satisfacer nuestras necesidades nutricionales.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">¿Por qué considerar las proteínas vegetales?</h2>
+      
+      <p class="mb-4">Incorporar más proteínas de origen vegetal en nuestra alimentación tiene múltiples beneficios:</p>
+      
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li>Menor impacto ambiental que la producción de proteínas animales.</li>
+        <li>Generalmente contienen menos grasas saturadas y colesterol.</li>
+        <li>Aportan fibra, vitaminas, minerales y fitoquímicos beneficiosos.</li>
+        <li>Suelen ser más económicas que las fuentes animales.</li>
+        <li>Se asocian con menor riesgo de enfermedades crónicas.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Las mejores fuentes de proteínas vegetales</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">1. Legumbres</h3>
+      <p class="mb-4">Son la principal fuente de proteínas vegetales y comprenden:</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Lentejas:</strong> 18g de proteína por taza cocida.</li>
+        <li><strong>Garbanzos:</strong> 15g de proteína por taza cocida.</li>
+        <li><strong>Frijoles negros:</strong> 15g de proteína por taza cocida.</li>
+        <li><strong>Guisantes:</strong> 8g de proteína por taza cocida.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">2. Soja y derivados</h3>
+      <p class="mb-4">La soja contiene todos los aminoácidos esenciales, siendo una proteína completa:</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Tofu:</strong> 20g de proteína por taza.</li>
+        <li><strong>Tempeh:</strong> 31g de proteína por taza.</li>
+        <li><strong>Edamame:</strong> 17g de proteína por taza.</li>
+        <li><strong>Leche de soja:</strong> 7g de proteína por taza.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">3. Frutos secos y semillas</h3>
+      <p class="mb-4">Ricos en proteínas y grasas saludables:</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Almendras:</strong> 6g de proteína por 1/4 taza.</li>
+        <li><strong>Nueces:</strong> 4g de proteína por 1/4 taza.</li>
+        <li><strong>Semillas de chía:</strong> 5g de proteína por 2 cucharadas.</li>
+        <li><strong>Semillas de cáñamo:</strong> 10g de proteína por 3 cucharadas.</li>
+        <li><strong>Mantequilla de cacahuete:</strong> 8g de proteína por 2 cucharadas.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">4. Cereales y pseudocereales</h3>
+      <p class="mb-4">Algunos granos contienen cantidades significativas de proteína:</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Quinoa:</strong> 8g de proteína por taza cocida.</li>
+        <li><strong>Avena:</strong> 6g de proteína por taza cocida.</li>
+        <li><strong>Amaranto:</strong> 9g de proteína por taza cocida.</li>
+        <li><strong>Trigo sarraceno:</strong> 6g de proteína por taza cocida.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">5. Otros alimentos</h3>
+      <p class="mb-4">Otras fuentes vegetales de proteínas incluyen:</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Seitan (gluten de trigo):</strong> 25g de proteína por 100g.</li>
+        <li><strong>Nutritional yeast (levadura nutricional):</strong> 8g de proteína por 2 cucharadas.</li>
+        <li><strong>Espirulina:</strong> 4g de proteína por cucharada.</li>
+        <li><strong>Verduras como brócoli, espinacas y coles de Bruselas:</strong> 3-4g de proteína por taza.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Combinando proteínas vegetales</h2>
+      
+      <p class="mb-4">Aunque anteriormente se creía que las proteínas vegetales debían combinarse en una misma comida para obtener todos los aminoácidos esenciales, hoy sabemos que no es necesario. Lo importante es consumir una variedad de fuentes proteicas vegetales a lo largo del día.</p>
+      
+      <p class="mb-4">Sin embargo, existen combinaciones tradicionales que son nutricionalmente complementarias:</p>
+      
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li><strong>Legumbres + cereales:</strong> Arroz con frijoles, hummus con pan.</li>
+        <li><strong>Legumbres + semillas:</strong> Ensalada de lentejas con semillas de calabaza.</li>
+        <li><strong>Cereales + frutos secos:</strong> Avena con almendras.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Ideas prácticas para incorporar más proteínas vegetales</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Desayunos</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Batido de leche vegetal con mantequilla de almendras y semillas de chía.</li>
+        <li>Tostada de pan integral con hummus y aguacate.</li>
+        <li>Yogur vegetal con granola y frutos secos.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Comidas</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Ensalada de quinoa con garbanzos, verduras y semillas.</li>
+        <li>Bowl de arroz integral con tofu salteado y verduras.</li>
+        <li>Hamburguesas de lentejas con ensalada.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Cenas</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Curry de garbanzos con arroz.</li>
+        <li>Pasta integral con salsa de lentejas.</li>
+        <li>Wraps de hummus con verduras y tempeh.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Snacks</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Edamame con sal marina.</li>
+        <li>Mix de frutos secos y semillas.</li>
+        <li>Hummus con palitos de verduras.</li>
+      </ul>
+      
+      <div class="bg-primary-light/10 p-6 rounded-lg mt-8 mb-6">
+        <h3 class="text-xl font-bold mb-3">Consideraciones finales</h3>
+        <p class="mb-2">Si sigues una dieta 100% vegetal, presta especial atención a nutrientes como la vitamina B12, hierro, zinc, calcio y omega-3, que son más abundantes en alimentos de origen animal.</p>
+        <p>Las proteínas vegetales pueden satisfacer perfectamente tus necesidades nutricionales si se consumen en cantidades adecuadas y variadas. Si tienes dudas sobre tu ingesta de proteínas o planeas hacer cambios significativos en tu dieta, consulta con un profesional de la nutrición.</p>
+      </div>
+    `,
+	},
+
+	'nutricion-rendimiento-deportivo': {
+		title: 'Nutrición y Rendimiento Deportivo',
+		description:
+			'Estrategias nutricionales para optimizar tu rendimiento deportivo, mejorar la recuperación y alcanzar tus objetivos físicos.',
+		image:
+			'https://images.pexels.com/photos/703016/pexels-photo-703016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+		date: '2023-07-10',
+		author: 'Lic. Ana Martínez',
+		content: `
+      <p class="mb-4">La nutrición juega un papel fundamental en el rendimiento deportivo, siendo tan importante como el entrenamiento mismo. Una alimentación adecuada no solo proporciona la energía necesaria para el ejercicio, sino que también optimiza la recuperación, reduce el riesgo de lesiones y ayuda a alcanzar los objetivos físicos específicos.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Macronutrientes: La base de la nutrición deportiva</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Carbohidratos: El combustible principal</h3>
+      <p class="mb-4">Los carbohidratos son la fuente de energía preferida por el organismo durante la actividad física de intensidad moderada a alta.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Actividad de baja intensidad:</strong> 3-5g/kg de peso corporal/día</li>
+        <li><strong>Actividad de intensidad moderada (1 hora/día):</strong> 5-7g/kg/día</li>
+        <li><strong>Actividad de alta intensidad (1-3 horas/día):</strong> 6-10g/kg/día</li>
+        <li><strong>Actividad de muy alta intensidad (>4-5 horas/día):</strong> 8-12g/kg/día</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: arroz, pasta, pan integral, patatas, frutas, legumbres, avena.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Proteínas: Reparación y crecimiento muscular</h3>
+      <p class="mb-4">Las proteínas son esenciales para la reparación de los tejidos dañados durante el ejercicio y para el desarrollo de masa muscular.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Personas sedentarias:</strong> 0.8g/kg/día</li>
+        <li><strong>Actividad moderada:</strong> 1.0-1.2g/kg/día</li>
+        <li><strong>Deportes de fuerza/potencia:</strong> 1.4-2.0g/kg/día</li>
+        <li><strong>Deportes de resistencia:</strong> 1.2-1.6g/kg/día</li>
+        <li><strong>Atletas en déficit calórico:</strong> hasta 2.2g/kg/día</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: carnes magras, pescado, huevos, lácteos, legumbres, tofu, seitan, quinoa.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Grasas: Fuente de energía y regulación hormonal</h3>
+      <p class="mb-4">Las grasas son importantes para el funcionamiento hormonal, la absorción de vitaminas liposolubles y como fuente de energía en ejercicios de baja intensidad.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Recomendación general:</strong> 0.5-1.5g/kg/día o 20-35% del total calórico</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: aceite de oliva, aguacate, frutos secos, semillas, pescados grasos.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Nutrición antes, durante y después del ejercicio</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Antes del entrenamiento</h3>
+      <p class="mb-4">El objetivo es maximizar las reservas de glucógeno y mantener niveles estables de glucosa en sangre.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>1-4 horas antes:</strong> Comida con carbohidratos de digestión lenta, proteína moderada y poca grasa (1-4g/kg de carbohidratos).</li>
+        <li><strong>30-60 minutos antes:</strong> Snack ligero rico en carbohidratos (0.5-1g/kg).</li>
+        <li><strong>Ejemplos:</strong> Avena con plátano y mantequilla de almendras, yogur con frutas y granola, tostada con huevo.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Durante el entrenamiento</h3>
+      <p class="mb-4">Solo necesario para sesiones de más de 60-90 minutos o de muy alta intensidad.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Carbohidratos:</strong> 30-60g por hora para mantener la glucemia.</li>
+        <li><strong>Hidratación:</strong> 400-800ml/hora, ajustando según clima y sudoración.</li>
+        <li><strong>Ejemplos:</strong> Bebidas deportivas, geles energéticos, plátanos, dátiles.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Después del entrenamiento</h3>
+      <p class="mb-4">El objetivo es reponer el glucógeno muscular, facilitar la reparación tisular y optimizar la recuperación.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Ventana anabólica:</strong> Primeros 30-60 minutos post-ejercicio (aunque no es tan crítica como se pensaba).</li>
+        <li><strong>Carbohidratos:</strong> 0.8-1.2g/kg/hora durante las primeras 4 horas.</li>
+        <li><strong>Proteínas:</strong> 20-40g (0.25-0.3g/kg) de proteína de alta calidad.</li>
+        <li><strong>Ejemplos:</strong> Batido de proteínas con plátano, pollo con arroz y verduras, tortilla con patatas.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Hidratación y rendimiento</h2>
+      
+      <p class="mb-4">La hidratación es crucial para el rendimiento deportivo. Una deshidratación de solo el 2% del peso corporal puede reducir significativamente el rendimiento.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Recomendaciones de hidratación</h3>
+      <ul class="list-disc pl-6 mb-6 space-y-1">
+        <li><strong>General:</strong> 2-3 litros diarios (varía según individuo, clima y actividad).</li>
+        <li><strong>Pre-ejercicio:</strong> 5-7ml/kg 4 horas antes + 3-5ml/kg 2 horas antes.</li>
+        <li><strong>Durante el ejercicio:</strong> Suficiente para limitar la pérdida de peso a <2% (aproximadamente 400-800ml/hora).</li>
+        <li><strong>Post-ejercicio:</strong> 1.5 litros por cada kg de peso perdido.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Suplementación deportiva</h2>
+      
+      <p class="mb-4">Aunque una dieta equilibrada debería proporcionar todos los nutrientes necesarios, algunos suplementos pueden ser beneficiosos en determinadas circunstancias. Siempre deben utilizarse como complemento, no como sustituto de una buena alimentación.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Suplementos con evidencia científica sólida</h3>
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li><strong>Creatina:</strong> Mejora el rendimiento en ejercicios de alta intensidad y corta duración. Dosis: 3-5g diarios.</li>
+        <li><strong>Cafeína:</strong> Aumenta la resistencia y reduce la percepción del esfuerzo. Dosis: 3-6mg/kg 60 minutos antes del ejercicio.</li>
+        <li><strong>Beta-alanina:</strong> Mejora el rendimiento en actividades de 1-4 minutos. Dosis: 3-6g diarios.</li>
+        <li><strong>Proteína en polvo:</strong> Facilita alcanzar los requerimientos proteicos. Dosis: 20-40g post-entrenamiento.</li>
+        <li><strong>Bebidas de recuperación:</strong> Combinan carbohidratos y proteínas para optimizar la recuperación.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Estrategias nutricionales según objetivos</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para aumentar masa muscular</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Consumir un superávit calórico moderado (300-500 kcal/día).</li>
+        <li>Ingesta proteica de 1.6-2.2g/kg/día, distribuida a lo largo del día.</li>
+        <li>Asegurar suficientes carbohidratos para el entrenamiento intenso (5-8g/kg/día).</li>
+        <li>Consumir proteína antes de dormir (20-40g de caseína o similar).</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para pérdida de grasa manteniendo rendimiento</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Déficit calórico moderado (300-500 kcal/día).</li>
+        <li>Ingesta proteica elevada (1.8-2.2g/kg/día) para preservar masa muscular.</li>
+        <li>Carbohidratos suficientes concentrados alrededor del entrenamiento.</li>
+        <li>Entrenamiento en ayunas como opción (con precaución y adaptación previa).</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para deportes de resistencia</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Alta ingesta de carbohidratos (7-12g/kg/día), especialmente en períodos de entrenamiento intenso.</li>
+        <li>Carga de carbohidratos antes de competiciones largas (>90 min).</li>
+        <li>Proteína moderada (1.2-1.6g/kg/día) para la recuperación.</li>
+        <li>Estrategias de nutrición durante el ejercicio bien planificadas.</li>
+      </ul>
+      
+      <div class="bg-primary-light/10 p-6 rounded-lg mt-8 mb-6">
+        <h3 class="text-xl font-bold mb-3">Recuerda siempre</h3>
+        <p class="mb-2">La nutrición deportiva debe ser individualizada. Lo que funciona para un atleta puede no ser adecuado para otro.</p>
+        <p class="mb-2">Factores como la edad, el sexo, el tipo de deporte, los objetivos específicos, las intolerancias alimentarias y las preferencias personales deben tenerse en cuenta al diseñar un plan nutricional.</p>
+        <p>Para obtener un plan nutricional personalizado adaptado a tus necesidades y objetivos específicos, consulta con un dietista-nutricionista especializado en nutrición deportiva.</p>
+      </div>
+    `,
+	},
+	'snacks-saludables-trabajo': {
+		title: 'Los Mejores Snacks Saludables para el Trabajo',
+		description:
+			'Opciones prácticas y nutritivas para mantener la energía durante la jornada laboral sin comprometer tu salud.',
+		image:
+			'https://images.pexels.com/photos/5945559/pexels-photo-5945559.jpeg?auto=compress&cs=tinysrgb&w=600',
+		date: '2023-07-28',
+		author: 'Lic. Ana Martínez',
+		content: `
+      <p class="mb-4">La nutrición juega un papel fundamental en el rendimiento deportivo, siendo tan importante como el entrenamiento mismo. Una alimentación adecuada no solo proporciona la energía necesaria para el ejercicio, sino que también optimiza la recuperación, reduce el riesgo de lesiones y ayuda a alcanzar los objetivos físicos específicos.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Macronutrientes: La base de la nutrición deportiva</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Carbohidratos: El combustible principal</h3>
+      <p class="mb-4">Los carbohidratos son la fuente de energía preferida por el organismo durante la actividad física de intensidad moderada a alta.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Actividad de baja intensidad:</strong> 3-5g/kg de peso corporal/día</li>
+        <li><strong>Actividad de intensidad moderada (1 hora/día):</strong> 5-7g/kg/día</li>
+        <li><strong>Actividad de alta intensidad (1-3 horas/día):</strong> 6-10g/kg/día</li>
+        <li><strong>Actividad de muy alta intensidad (>4-5 horas/día):</strong> 8-12g/kg/día</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: arroz, pasta, pan integral, patatas, frutas, legumbres, avena.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Proteínas: Reparación y crecimiento muscular</h3>
+      <p class="mb-4">Las proteínas son esenciales para la reparación de los tejidos dañados durante el ejercicio y para el desarrollo de masa muscular.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Personas sedentarias:</strong> 0.8g/kg/día</li>
+        <li><strong>Actividad moderada:</strong> 1.0-1.2g/kg/día</li>
+        <li><strong>Deportes de fuerza/potencia:</strong> 1.4-2.0g/kg/día</li>
+        <li><strong>Deportes de resistencia:</strong> 1.2-1.6g/kg/día</li>
+        <li><strong>Atletas en déficit calórico:</strong> hasta 2.2g/kg/día</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: carnes magras, pescado, huevos, lácteos, legumbres, tofu, seitan, quinoa.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Grasas: Fuente de energía y regulación hormonal</h3>
+      <p class="mb-4">Las grasas son importantes para el funcionamiento hormonal, la absorción de vitaminas liposolubles y como fuente de energía en ejercicios de baja intensidad.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Recomendación general:</strong> 0.5-1.5g/kg/día o 20-35% del total calórico</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: aceite de oliva, aguacate, frutos secos, semillas, pescados grasos.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Nutrición antes, durante y después del ejercicio</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Antes del entrenamiento</h3>
+      <p class="mb-4">El objetivo es maximizar las reservas de glucógeno y mantener niveles estables de glucosa en sangre.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>1-4 horas antes:</strong> Comida con carbohidratos de digestión lenta, proteína moderada y poca grasa (1-4g/kg de carbohidratos).</li>
+        <li><strong>30-60 minutos antes:</strong> Snack ligero rico en carbohidratos (0.5-1g/kg).</li>
+        <li><strong>Ejemplos:</strong> Avena con plátano y mantequilla de almendras, yogur con frutas y granola, tostada con huevo.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Durante el entrenamiento</h3>
+      <p class="mb-4">Solo necesario para sesiones de más de 60-90 minutos o de muy alta intensidad.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Carbohidratos:</strong> 30-60g por hora para mantener la glucemia.</li>
+        <li><strong>Hidratación:</strong> 400-800ml/hora, ajustando según clima y sudoración.</li>
+        <li><strong>Ejemplos:</strong> Bebidas deportivas, geles energéticos, plátanos, dátiles.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Después del entrenamiento</h3>
+      <p class="mb-4">El objetivo es reponer el glucógeno muscular, facilitar la reparación tisular y optimizar la recuperación.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Ventana anabólica:</strong> Primeros 30-60 minutos post-ejercicio (aunque no es tan crítica como se pensaba).</li>
+        <li><strong>Carbohidratos:</strong> 0.8-1.2g/kg/hora durante las primeras 4 horas.</li>
+        <li><strong>Proteínas:</strong> 20-40g (0.25-0.3g/kg) de proteína de alta calidad.</li>
+        <li><strong>Ejemplos:</strong> Batido de proteínas con plátano, pollo con arroz y verduras, tortilla con patatas.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Hidratación y rendimiento</h2>
+      
+      <p class="mb-4">La hidratación es crucial para el rendimiento deportivo. Una deshidratación de solo el 2% del peso corporal puede reducir significativamente el rendimiento.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Recomendaciones de hidratación</h3>
+      <ul class="list-disc pl-6 mb-6 space-y-1">
+        <li><strong>General:</strong> 2-3 litros diarios (varía según individuo, clima y actividad).</li>
+        <li><strong>Pre-ejercicio:</strong> 5-7ml/kg 4 horas antes + 3-5ml/kg 2 horas antes.</li>
+        <li><strong>Durante el ejercicio:</strong> Suficiente para limitar la pérdida de peso a <2% (aproximadamente 400-800ml/hora).</li>
+        <li><strong>Post-ejercicio:</strong> 1.5 litros por cada kg de peso perdido.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Suplementación deportiva</h2>
+      
+      <p class="mb-4">Aunque una dieta equilibrada debería proporcionar todos los nutrientes necesarios, algunos suplementos pueden ser beneficiosos en determinadas circunstancias. Siempre deben utilizarse como complemento, no como sustituto de una buena alimentación.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Suplementos con evidencia científica sólida</h3>
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li><strong>Creatina:</strong> Mejora el rendimiento en ejercicios de alta intensidad y corta duración. Dosis: 3-5g diarios.</li>
+        <li><strong>Cafeína:</strong> Aumenta la resistencia y reduce la percepción del esfuerzo. Dosis: 3-6mg/kg 60 minutos antes del ejercicio.</li>
+        <li><strong>Beta-alanina:</strong> Mejora el rendimiento en actividades de 1-4 minutos. Dosis: 3-6g diarios.</li>
+        <li><strong>Proteína en polvo:</strong> Facilita alcanzar los requerimientos proteicos. Dosis: 20-40g post-entrenamiento.</li>
+        <li><strong>Bebidas de recuperación:</strong> Combinan carbohidratos y proteínas para optimizar la recuperación.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Estrategias nutricionales según objetivos</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para aumentar masa muscular</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Consumir un superávit calórico moderado (300-500 kcal/día).</li>
+        <li>Ingesta proteica de 1.6-2.2g/kg/día, distribuida a lo largo del día.</li>
+        <li>Asegurar suficientes carbohidratos para el entrenamiento intenso (5-8g/kg/día).</li>
+        <li>Consumir proteína antes de dormir (20-40g de caseína o similar).</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para pérdida de grasa manteniendo rendimiento</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Déficit calórico moderado (300-500 kcal/día).</li>
+        <li>Ingesta proteica elevada (1.8-2.2g/kg/día) para preservar masa muscular.</li>
+        <li>Carbohidratos suficientes concentrados alrededor del entrenamiento.</li>
+        <li>Entrenamiento en ayunas como opción (con precaución y adaptación previa).</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para deportes de resistencia</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Alta ingesta de carbohidratos (7-12g/kg/día), especialmente en períodos de entrenamiento intenso.</li>
+        <li>Carga de carbohidratos antes de competiciones largas (>90 min).</li>
+        <li>Proteína moderada (1.2-1.6g/kg/día) para la recuperación.</li>
+        <li>Estrategias de nutrición durante el ejercicio bien planificadas.</li>
+      </ul>
+      
+      <div class="bg-primary-light/10 p-6 rounded-lg mt-8 mb-6">
+        <h3 class="text-xl font-bold mb-3">Recuerda siempre</h3>
+        <p class="mb-2">La nutrición deportiva debe ser individualizada. Lo que funciona para un atleta puede no ser adecuado para otro.</p>
+        <p class="mb-2">Factores como la edad, el sexo, el tipo de deporte, los objetivos específicos, las intolerancias alimentarias y las preferencias personales deben tenerse en cuenta al diseñar un plan nutricional.</p>
+        <p>Para obtener un plan nutricional personalizado adaptado a tus necesidades y objetivos específicos, consulta con un dietista-nutricionista especializado en nutrición deportiva.</p>
+      </div>
+    `,
+	},
+	'mitos-realidades-nutricion': {
+		title: 'Mitos y Realidades sobre la Nutrición',
+		description:
+			'Analizamos los mitos más comunes sobre la alimentación y presentamos la evidencia científica que los desmiente.',
+		image:
+			'https://images.pexels.com/photos/4033596/pexels-photo-4033596.jpeg?auto=compress&cs=tinysrgb&w=600',
+		date: '2023-08-15',
+		author: 'Dr. Carlos Rodríguez',
+		content: `
+      <p class="mb-4">La nutrición juega un papel fundamental en el rendimiento deportivo, siendo tan importante como el entrenamiento mismo. Una alimentación adecuada no solo proporciona la energía necesaria para el ejercicio, sino que también optimiza la recuperación, reduce el riesgo de lesiones y ayuda a alcanzar los objetivos físicos específicos.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Macronutrientes: La base de la nutrición deportiva</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Carbohidratos: El combustible principal</h3>
+      <p class="mb-4">Los carbohidratos son la fuente de energía preferida por el organismo durante la actividad física de intensidad moderada a alta.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Actividad de baja intensidad:</strong> 3-5g/kg de peso corporal/día</li>
+        <li><strong>Actividad de intensidad moderada (1 hora/día):</strong> 5-7g/kg/día</li>
+        <li><strong>Actividad de alta intensidad (1-3 horas/día):</strong> 6-10g/kg/día</li>
+        <li><strong>Actividad de muy alta intensidad (>4-5 horas/día):</strong> 8-12g/kg/día</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: arroz, pasta, pan integral, patatas, frutas, legumbres, avena.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Proteínas: Reparación y crecimiento muscular</h3>
+      <p class="mb-4">Las proteínas son esenciales para la reparación de los tejidos dañados durante el ejercicio y para el desarrollo de masa muscular.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Personas sedentarias:</strong> 0.8g/kg/día</li>
+        <li><strong>Actividad moderada:</strong> 1.0-1.2g/kg/día</li>
+        <li><strong>Deportes de fuerza/potencia:</strong> 1.4-2.0g/kg/día</li>
+        <li><strong>Deportes de resistencia:</strong> 1.2-1.6g/kg/día</li>
+        <li><strong>Atletas en déficit calórico:</strong> hasta 2.2g/kg/día</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: carnes magras, pescado, huevos, lácteos, legumbres, tofu, seitan, quinoa.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Grasas: Fuente de energía y regulación hormonal</h3>
+      <p class="mb-4">Las grasas son importantes para el funcionamiento hormonal, la absorción de vitaminas liposolubles y como fuente de energía en ejercicios de baja intensidad.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Recomendación general:</strong> 0.5-1.5g/kg/día o 20-35% del total calórico</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: aceite de oliva, aguacate, frutos secos, semillas, pescados grasos.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Nutrición antes, durante y después del ejercicio</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Antes del entrenamiento</h3>
+      <p class="mb-4">El objetivo es maximizar las reservas de glucógeno y mantener niveles estables de glucosa en sangre.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>1-4 horas antes:</strong> Comida con carbohidratos de digestión lenta, proteína moderada y poca grasa (1-4g/kg de carbohidratos).</li>
+        <li><strong>30-60 minutos antes:</strong> Snack ligero rico en carbohidratos (0.5-1g/kg).</li>
+        <li><strong>Ejemplos:</strong> Avena con plátano y mantequilla de almendras, yogur con frutas y granola, tostada con huevo.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Durante el entrenamiento</h3>
+      <p class="mb-4">Solo necesario para sesiones de más de 60-90 minutos o de muy alta intensidad.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Carbohidratos:</strong> 30-60g por hora para mantener la glucemia.</li>
+        <li><strong>Hidratación:</strong> 400-800ml/hora, ajustando según clima y sudoración.</li>
+        <li><strong>Ejemplos:</strong> Bebidas deportivas, geles energéticos, plátanos, dátiles.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Después del entrenamiento</h3>
+      <p class="mb-4">El objetivo es reponer el glucógeno muscular, facilitar la reparación tisular y optimizar la recuperación.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Ventana anabólica:</strong> Primeros 30-60 minutos post-ejercicio (aunque no es tan crítica como se pensaba).</li>
+        <li><strong>Carbohidratos:</strong> 0.8-1.2g/kg/hora durante las primeras 4 horas.</li>
+        <li><strong>Proteínas:</strong> 20-40g (0.25-0.3g/kg) de proteína de alta calidad.</li>
+        <li><strong>Ejemplos:</strong> Batido de proteínas con plátano, pollo con arroz y verduras, tortilla con patatas.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Hidratación y rendimiento</h2>
+      
+      <p class="mb-4">La hidratación es crucial para el rendimiento deportivo. Una deshidratación de solo el 2% del peso corporal puede reducir significativamente el rendimiento.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Recomendaciones de hidratación</h3>
+      <ul class="list-disc pl-6 mb-6 space-y-1">
+        <li><strong>General:</strong> 2-3 litros diarios (varía según individuo, clima y actividad).</li>
+        <li><strong>Pre-ejercicio:</strong> 5-7ml/kg 4 horas antes + 3-5ml/kg 2 horas antes.</li>
+        <li><strong>Durante el ejercicio:</strong> Suficiente para limitar la pérdida de peso a <2% (aproximadamente 400-800ml/hora).</li>
+        <li><strong>Post-ejercicio:</strong> 1.5 litros por cada kg de peso perdido.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Suplementación deportiva</h2>
+      
+      <p class="mb-4">Aunque una dieta equilibrada debería proporcionar todos los nutrientes necesarios, algunos suplementos pueden ser beneficiosos en determinadas circunstancias. Siempre deben utilizarse como complemento, no como sustituto de una buena alimentación.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Suplementos con evidencia científica sólida</h3>
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li><strong>Creatina:</strong> Mejora el rendimiento en ejercicios de alta intensidad y corta duración. Dosis: 3-5g diarios.</li>
+        <li><strong>Cafeína:</strong> Aumenta la resistencia y reduce la percepción del esfuerzo. Dosis: 3-6mg/kg 60 minutos antes del ejercicio.</li>
+        <li><strong>Beta-alanina:</strong> Mejora el rendimiento en actividades de 1-4 minutos. Dosis: 3-6g diarios.</li>
+        <li><strong>Proteína en polvo:</strong> Facilita alcanzar los requerimientos proteicos. Dosis: 20-40g post-entrenamiento.</li>
+        <li><strong>Bebidas de recuperación:</strong> Combinan carbohidratos y proteínas para optimizar la recuperación.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Estrategias nutricionales según objetivos</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para aumentar masa muscular</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Consumir un superávit calórico moderado (300-500 kcal/día).</li>
+        <li>Ingesta proteica de 1.6-2.2g/kg/día, distribuida a lo largo del día.</li>
+        <li>Asegurar suficientes carbohidratos para el entrenamiento intenso (5-8g/kg/día).</li>
+        <li>Consumir proteína antes de dormir (20-40g de caseína o similar).</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para pérdida de grasa manteniendo rendimiento</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Déficit calórico moderado (300-500 kcal/día).</li>
+        <li>Ingesta proteica elevada (1.8-2.2g/kg/día) para preservar masa muscular.</li>
+        <li>Carbohidratos suficientes concentrados alrededor del entrenamiento.</li>
+        <li>Entrenamiento en ayunas como opción (con precaución y adaptación previa).</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para deportes de resistencia</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Alta ingesta de carbohidratos (7-12g/kg/día), especialmente en períodos de entrenamiento intenso.</li>
+        <li>Carga de carbohidratos antes de competiciones largas (>90 min).</li>
+        <li>Proteína moderada (1.2-1.6g/kg/día) para la recuperación.</li>
+        <li>Estrategias de nutrición durante el ejercicio bien planificadas.</li>
+      </ul>
+      
+      <div class="bg-primary-light/10 p-6 rounded-lg mt-8 mb-6">
+        <h3 class="text-xl font-bold mb-3">Recuerda siempre</h3>
+        <p class="mb-2">La nutrición deportiva debe ser individualizada. Lo que funciona para un atleta puede no ser adecuado para otro.</p>
+        <p class="mb-2">Factores como la edad, el sexo, el tipo de deporte, los objetivos específicos, las intolerancias alimentarias y las preferencias personales deben tenerse en cuenta al diseñar un plan nutricional.</p>
+        <p>Para obtener un plan nutricional personalizado adaptado a tus necesidades y objetivos específicos, consulta con un dietista-nutricionista especializado en nutrición deportiva.</p>
+      </div>
+    `,
+	},
+	'nutricion-salud-mental': {
+		title: 'Nutrición para la Salud Mental',
+		description:
+			'Cómo tu alimentación influye en tu bienestar emocional y mental, y qué nutrientes son clave para mantener un cerebro saludable.',
+		image:
+			'https://images.pexels.com/photos/5340280/pexels-photo-5340280.jpeg?auto=compress&cs=tinysrgb&w=600',
+		date: '2023-09-05',
+		author: 'Dr. Carlos Rodríguez',
+		content: `
+      <p class="mb-4">La nutrición juega un papel fundamental en el rendimiento deportivo, siendo tan importante como el entrenamiento mismo. Una alimentación adecuada no solo proporciona la energía necesaria para el ejercicio, sino que también optimiza la recuperación, reduce el riesgo de lesiones y ayuda a alcanzar los objetivos físicos específicos.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Macronutrientes: La base de la nutrición deportiva</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Carbohidratos: El combustible principal</h3>
+      <p class="mb-4">Los carbohidratos son la fuente de energía preferida por el organismo durante la actividad física de intensidad moderada a alta.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Actividad de baja intensidad:</strong> 3-5g/kg de peso corporal/día</li>
+        <li><strong>Actividad de intensidad moderada (1 hora/día):</strong> 5-7g/kg/día</li>
+        <li><strong>Actividad de alta intensidad (1-3 horas/día):</strong> 6-10g/kg/día</li>
+        <li><strong>Actividad de muy alta intensidad (>4-5 horas/día):</strong> 8-12g/kg/día</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: arroz, pasta, pan integral, patatas, frutas, legumbres, avena.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Proteínas: Reparación y crecimiento muscular</h3>
+      <p class="mb-4">Las proteínas son esenciales para la reparación de los tejidos dañados durante el ejercicio y para el desarrollo de masa muscular.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Personas sedentarias:</strong> 0.8g/kg/día</li>
+        <li><strong>Actividad moderada:</strong> 1.0-1.2g/kg/día</li>
+        <li><strong>Deportes de fuerza/potencia:</strong> 1.4-2.0g/kg/día</li>
+        <li><strong>Deportes de resistencia:</strong> 1.2-1.6g/kg/día</li>
+        <li><strong>Atletas en déficit calórico:</strong> hasta 2.2g/kg/día</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: carnes magras, pescado, huevos, lácteos, legumbres, tofu, seitan, quinoa.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Grasas: Fuente de energía y regulación hormonal</h3>
+      <p class="mb-4">Las grasas son importantes para el funcionamiento hormonal, la absorción de vitaminas liposolubles y como fuente de energía en ejercicios de baja intensidad.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Recomendación general:</strong> 0.5-1.5g/kg/día o 20-35% del total calórico</li>
+      </ul>
+      <p class="mb-4">Buenas fuentes: aceite de oliva, aguacate, frutos secos, semillas, pescados grasos.</p>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Nutrición antes, durante y después del ejercicio</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Antes del entrenamiento</h3>
+      <p class="mb-4">El objetivo es maximizar las reservas de glucógeno y mantener niveles estables de glucosa en sangre.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>1-4 horas antes:</strong> Comida con carbohidratos de digestión lenta, proteína moderada y poca grasa (1-4g/kg de carbohidratos).</li>
+        <li><strong>30-60 minutos antes:</strong> Snack ligero rico en carbohidratos (0.5-1g/kg).</li>
+        <li><strong>Ejemplos:</strong> Avena con plátano y mantequilla de almendras, yogur con frutas y granola, tostada con huevo.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Durante el entrenamiento</h3>
+      <p class="mb-4">Solo necesario para sesiones de más de 60-90 minutos o de muy alta intensidad.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Carbohidratos:</strong> 30-60g por hora para mantener la glucemia.</li>
+        <li><strong>Hidratación:</strong> 400-800ml/hora, ajustando según clima y sudoración.</li>
+        <li><strong>Ejemplos:</strong> Bebidas deportivas, geles energéticos, plátanos, dátiles.</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Después del entrenamiento</h3>
+      <p class="mb-4">El objetivo es reponer el glucógeno muscular, facilitar la reparación tisular y optimizar la recuperación.</p>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>Ventana anabólica:</strong> Primeros 30-60 minutos post-ejercicio (aunque no es tan crítica como se pensaba).</li>
+        <li><strong>Carbohidratos:</strong> 0.8-1.2g/kg/hora durante las primeras 4 horas.</li>
+        <li><strong>Proteínas:</strong> 20-40g (0.25-0.3g/kg) de proteína de alta calidad.</li>
+        <li><strong>Ejemplos:</strong> Batido de proteínas con plátano, pollo con arroz y verduras, tortilla con patatas.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Hidratación y rendimiento</h2>
+      
+      <p class="mb-4">La hidratación es crucial para el rendimiento deportivo. Una deshidratación de solo el 2% del peso corporal puede reducir significativamente el rendimiento.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Recomendaciones de hidratación</h3>
+      <ul class="list-disc pl-6 mb-6 space-y-1">
+        <li><strong>General:</strong> 2-3 litros diarios (varía según individuo, clima y actividad).</li>
+        <li><strong>Pre-ejercicio:</strong> 5-7ml/kg 4 horas antes + 3-5ml/kg 2 horas antes.</li>
+        <li><strong>Durante el ejercicio:</strong> Suficiente para limitar la pérdida de peso a <2% (aproximadamente 400-800ml/hora).</li>
+        <li><strong>Post-ejercicio:</strong> 1.5 litros por cada kg de peso perdido.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Suplementación deportiva</h2>
+      
+      <p class="mb-4">Aunque una dieta equilibrada debería proporcionar todos los nutrientes necesarios, algunos suplementos pueden ser beneficiosos en determinadas circunstancias. Siempre deben utilizarse como complemento, no como sustituto de una buena alimentación.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Suplementos con evidencia científica sólida</h3>
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li><strong>Creatina:</strong> Mejora el rendimiento en ejercicios de alta intensidad y corta duración. Dosis: 3-5g diarios.</li>
+        <li><strong>Cafeína:</strong> Aumenta la resistencia y reduce la percepción del esfuerzo. Dosis: 3-6mg/kg 60 minutos antes del ejercicio.</li>
+        <li><strong>Beta-alanina:</strong> Mejora el rendimiento en actividades de 1-4 minutos. Dosis: 3-6g diarios.</li>
+        <li><strong>Proteína en polvo:</strong> Facilita alcanzar los requerimientos proteicos. Dosis: 20-40g post-entrenamiento.</li>
+        <li><strong>Bebidas de recuperación:</strong> Combinan carbohidratos y proteínas para optimizar la recuperación.</li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold mt-8 mb-4">Estrategias nutricionales según objetivos</h2>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para aumentar masa muscular</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Consumir un superávit calórico moderado (300-500 kcal/día).</li>
+        <li>Ingesta proteica de 1.6-2.2g/kg/día, distribuida a lo largo del día.</li>
+        <li>Asegurar suficientes carbohidratos para el entrenamiento intenso (5-8g/kg/día).</li>
+        <li>Consumir proteína antes de dormir (20-40g de caseína o similar).</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para pérdida de grasa manteniendo rendimiento</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Déficit calórico moderado (300-500 kcal/día).</li>
+        <li>Ingesta proteica elevada (1.8-2.2g/kg/día) para preservar masa muscular.</li>
+        <li>Carbohidratos suficientes concentrados alrededor del entrenamiento.</li>
+        <li>Entrenamiento en ayunas como opción (con precaución y adaptación previa).</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-2">Para deportes de resistencia</h3>
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li>Alta ingesta de carbohidratos (7-12g/kg/día), especialmente en períodos de entrenamiento intenso.</li>
+        <li>Carga de carbohidratos antes de competiciones largas (>90 min).</li>
+        <li>Proteína moderada (1.2-1.6g/kg/día) para la recuperación.</li>
+        <li>Estrategias de nutrición durante el ejercicio bien planificadas.</li>
+      </ul>
+      
+      <div class="bg-primary-light/10 p-6 rounded-lg mt-8 mb-6">
+        <h3 class="text-xl font-bold mb-3">Recuerda siempre</h3>
+        <p class="mb-2">La nutrición deportiva debe ser individualizada. Lo que funciona para un atleta puede no ser adecuado para otro.</p>
+        <p class="mb-2">Factores como la edad, el sexo, el tipo de deporte, los objetivos específicos, las intolerancias alimentarias y las preferencias personales deben tenerse en cuenta al diseñar un plan nutricional.</p>
+        <p>Para obtener un plan nutricional personalizado adaptado a tus necesidades y objetivos específicos, consulta con un dietista-nutricionista especializado en nutrición deportiva.</p>
+      </div>
+    `,
+	},
+};
+
+export function getStaticPaths() {
+	return [
+		{
+			params: { slug: 'alimentos-sistema-inmunologico' },
+		},
+		{
+			params: { slug: 'guia-proteinas-vegetales' },
+		},
+		{
+			params: { slug: 'nutricion-rendimiento-deportivo' },
+		},
+		{
+			params: { slug: 'mitos-realidades-nutricion' },
+		},
+		{
+			params: { slug: 'nutricion-salud-mental' },
+		},
+		{
+			params: { slug: 'nutricion-deportiva' },
+		},
+		{
+			params: { slug: 'nutricion-para-la-salud-mental' },
+		},
+		{
+			params: { slug: 'snacks-saludables-trabajo' },
+		},
+	];
+}
+
+const { slug } = Astro.params;
+const post = posts[slug as keyof typeof posts];
+
+if (post === undefined) {
+	return Astro.redirect('/404');
+}
+---
+
+<Layout title={post.title} description={post.description}>
+	<BlogLayout
+		title={post.title}
+		description={post.description}
+		publishDate={post.date}
+		author={post.author}
+		image={post.image}>
+		<div set:html={post.content} />
+	</BlogLayout>
+</Layout>
